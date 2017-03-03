@@ -1,0 +1,24 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: actualizando la cache de apt
+    apt: update_cache=yes
+  - name: Install apache2
+    apt: name=apache2 state=present
+  - name: Install passenger
+    apt: name=libapache2-mod-passenger state=present
+  - name: Install mysql
+    apt: name=mysql-server state=present
+  - copy: 
+     src: /home/crynus/vagrant-redmine/ficheros/passenger.conf
+     dest: /etc/apache2/mods-available/passenger.conf
+     owner: www-data
+     group: www-data
+     mode: 0644
+  - copy: 
+     src: /home/crynus/vagrant-redmine/ficheros/000-default.conf
+     dest: /etc/apache2/sites-available/000-default.conf
+     owner: www-data
+     group: www-data
+     mode: 0644
