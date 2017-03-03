@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"/home/crynus/vagrant-redmine/comparHome","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/crynus/vagrant-redmine","disabled":false,"__vagrantfile":true}}}
